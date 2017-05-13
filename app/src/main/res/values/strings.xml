@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">First</string>
     <string name="button_title">Show Today</string>
+    <string-array name="courses">
+        <item>Android Programming</item>
+        <item>Java Language </item>
+        <item>Micrsoft.Net</item>
+        <item>Angular</item>
+    </string-array>
+
 </resources>
