@@ -26,8 +26,6 @@ public class ToastActivity extends Activity {
 	public void showCustomToast(View v) {
      	 LayoutInflater inflater = getLayoutInflater();
 		 View toastView = inflater.inflate( R.layout.toast_layout ,null);
-//				             (ViewGroup) findViewById(R.id.toastView));
-		 
 		 TextView tv = (TextView)  toastView.findViewById( R.id.textTitle);
 		 tv.setText( new Date().toString());
 		 

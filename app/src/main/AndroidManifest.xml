@@ -38,7 +38,7 @@
         -->
         <activity android:name=".SecondActivity" />
         <activity android:name=".ThirdActivity" />
-        <activity android:name=".ToastActivity">
+        <activity android:name=".OptionsMenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
