@@ -36,9 +36,10 @@
             </intent-filter>
         </activity>
         -->
+        <activity android:name=".MainActivity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".ThirdActivity" />
-        <activity android:name=".OptionsMenuActivity">
+        <activity android:name=".NotifyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

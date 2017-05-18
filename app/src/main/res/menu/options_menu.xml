@@ -2,7 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
         <item android:title="Fill" android:id="@+id/optFill"
-            android:showAsAction="ifRoom|withText" ></item>
+            android:icon="@drawable/mail"
+            android:showAsAction="ifRoom" ></item>
         <item android:title="Save" android:id="@+id/optSave"></item>
         <item android:title="Options" android:id="@+id/optOptions"></item>
 
