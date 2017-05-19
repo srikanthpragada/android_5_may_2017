@@ -39,6 +39,7 @@ public class NotifyActivity extends Activity {
 		b.setContentText("Context Text");
 		b.setContentTitle("Content Title");
 		b.setTicker( "Ticket Text");
+		b.setAutoCancel(true);
 
 		b.setDefaults(Notification.DEFAULT_SOUND);
 		b.setWhen(System.currentTimeMillis());
