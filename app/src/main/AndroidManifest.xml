@@ -39,7 +39,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".ThirdActivity" />
-        <activity android:name=".ProgressBarActivity">
+        <activity android:name=".UserPreferencesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

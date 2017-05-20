@@ -5,4 +5,24 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style  name="redwhite">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">#FF0000</item>
+    </style>
+
+    <style  name="blackwhite">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">#000000</item>
+    </style>
+
+    <style  name="redwhitebig" parent="redwhite">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style  name="redwhitebig.arial">
+        <item name="android:fontFamily">Arial</item>
+    </style>
+
+
+
 </resources>
