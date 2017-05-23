@@ -22,7 +22,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".ThirdActivity" />
-        <activity android:name=".threads.UISumActivity">
+        <activity android:name=".threads.AsyncSumActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
