@@ -18,11 +18,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <service android:name=".threads.SumService" />
+        <service android:name=".threads.SumIntentService" />
 
         <activity android:name=".MainActivity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".ThirdActivity" />
-        <activity android:name=".threads.AsyncSumActivity">
+        <activity android:name=".threads.CallSumServiceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
