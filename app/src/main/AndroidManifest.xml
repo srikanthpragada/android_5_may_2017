@@ -9,7 +9,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
 
     <application
         android:allowBackup="true"
@@ -22,27 +23,26 @@
         <service android:name=".threads.SumBoundService" />
         <service android:name=".threads.SumIntentService" />
 
-        <activity android:name=".MainActivity">
+        <receiver android:name=".TimeTickReceiver"></receiver>
+
+        <receiver android:name=".TimeChangeReceiver">
             <intent-filter>
-                <action android:name="com.st.first.MAIN" />
-                <action android:name="com.st.first.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="com.st.first.MESSAGE" />
             </intent-filter>
-        </activity>
-
-
-        <activity android:name=".AnotherActivity">
+        </receiver>
+        <receiver android:name=".MessageReceiver">
             <intent-filter>
-                <action android:name="demo" />
-                <data android:scheme="demo"   />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.st.first.MESSAGE" />
             </intent-filter>
-        </activity>
+        </receiver>
+        <receiver android:name=".LogOutgingCall">
+            <intent-filter>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
 
-
-        <activity android:name=".SecondActivity" />
-        <activity android:name=".ThirdActivity" />
-        <activity android:name=".IntentDemoActivity">
+        <activity android:name=".SendMessageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
