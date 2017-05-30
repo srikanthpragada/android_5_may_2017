@@ -9,11 +9,13 @@ import android.view.View;
 import java.util.Date;
 
 public class SendMessageActivity extends Activity {
+    TimeTickReceiver receiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_message);
+        receiver = new TimeTickReceiver();
     }
 
     public void sendMessage(View v) {
@@ -25,10 +27,10 @@ public class SendMessageActivity extends Activity {
     public void register(View v) {
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_TIME_TICK);
-        registerReceiver(new TimeTickReceiver(),filter);
+        registerReceiver(receiver,filter);
     }
 
     public void unregister(View v) {
-        // unregisterReceiver();
+         unregisterReceiver(receiver);
     }
 }

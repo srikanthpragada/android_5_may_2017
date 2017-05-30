@@ -14,5 +14,10 @@ public class MessageReceiver extends BroadcastReceiver {
         Log.d("First", "Thread : " + Thread.currentThread().getName());
         Log.d("First", message);
 
+        Intent aintent   = new Intent(context, MessageActivity.class);
+        intent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK);
+        aintent.putExtra("message",message);
+        context.startActivity(aintent);
+
     }
 }

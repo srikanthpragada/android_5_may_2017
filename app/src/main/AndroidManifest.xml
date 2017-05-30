@@ -23,8 +23,7 @@
         <service android:name=".threads.SumBoundService" />
         <service android:name=".threads.SumIntentService" />
 
-        <receiver android:name=".TimeTickReceiver"></receiver>
-
+        <receiver android:name=".TimeTickReceiver" />
         <receiver android:name=".TimeChangeReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.TIME_SET" />
@@ -42,13 +41,14 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".SendMessageActivity">
+        <activity android:name=".customadapter.CustomAdapterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MessageActivity"></activity>
     </application>
 
 </manifest>
