@@ -6,11 +6,6 @@
         android:minSdkVersion="16"
         android:targetSdkVersion="16" />
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
 
     <application
         android:allowBackup="true"
@@ -19,36 +14,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <service android:name=".threads.SumService" />
-        <service android:name=".threads.SumBoundService" />
-        <service android:name=".threads.SumIntentService" />
 
-        <receiver android:name=".TimeTickReceiver" />
-        <receiver android:name=".TimeChangeReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.TIME_SET" />
-                <action android:name="com.st.first.MESSAGE" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name=".MessageReceiver">
-            <intent-filter>
-                <action android:name="com.st.first.MESSAGE" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name=".LogOutgingCall">
-            <intent-filter>
-                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
-            </intent-filter>
-        </receiver>
 
-        <activity android:name=".customadapter.CustomAdapterActivity">
+        <activity android:name=".fragments.FragmentsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MessageActivity"></activity>
+        <activity android:name=".MessageActivity" />
+
     </application>
 
 </manifest>
