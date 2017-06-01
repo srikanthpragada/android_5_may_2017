@@ -8,11 +8,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.st.first.R;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
+import java.util.Date;
 
 public class FirstFragment extends Fragment {
     public static final  String TAG = "First";
@@ -24,7 +26,16 @@ public class FirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false);
+        View v =  inflater.inflate(R.layout.fragment_first, container, false);
+        Button btnSend = (Button) v.findViewById(R.id.btnSend);
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ShowData a = (ShowData) getActivity();
+                a.showData(new Date().toString());
+            }
+        });
+        return v;
     }
 
 

@@ -6,16 +6,24 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.st.first.R;
 
-public class FragmentsActivity extends Activity {
+public class FragmentsActivity extends Activity  implements ShowData{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragments);
+    }
+
+    @Override
+    public void showData(String data)
+    {
+        TextView tv = (TextView) findViewById(R.id.textData);
+        tv.setText(data);
     }
 
     public void addFragment(View v) {
