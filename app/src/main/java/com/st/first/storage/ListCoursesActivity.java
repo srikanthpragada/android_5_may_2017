@@ -75,4 +75,9 @@ public class ListCoursesActivity extends Activity {
         startActivity(intent);
     }
 
+    public void callDeleteCourse(View v) {
+        Intent intent = new Intent(this, DeleteCoursesActivity.class);
+        startActivity(intent);
+    }
+
 }
