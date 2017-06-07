@@ -65,8 +65,7 @@ public class ExternalStorageActivity extends Activity {
 
     public void createDirectory(View v) {
         try {
-            // File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-            File dir = Environment.getExternalStorageDirectory();
+            File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
             File mydir = new File(dir, "demo");
             textMessage.append("\n External Storage Directory  :" + mydir.getAbsolutePath());
 
@@ -103,7 +102,7 @@ public class ExternalStorageActivity extends Activity {
     }
 
 
-    public void listFolders(View v) {
+    public void listPhotos(View v) {
         try {
             File dir = Environment.getExternalStoragePublicDirectory
                         (Environment.DIRECTORY_DCIM );
