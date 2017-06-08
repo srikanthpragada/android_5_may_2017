@@ -19,7 +19,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".storage.AddCourseActivity" />
         <activity android:name=".storage.DeleteCoursesActivity" />
-        <activity android:name=".storage.UpdateDeleteCourseActivity">
+        <activity android:name=".media.ListAlbumsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
