@@ -18,9 +18,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".storage.AddCourseActivity" />
-        <activity android:name=".storage.DeleteCoursesActivity" />
-        <activity android:name=".media.ContactDetailsActivity">
+
+        <provider
+            android:authorities="com.st.countries"
+            android:name=".storage.CountryContentProvider"/>
+
+        <provider
+            android:authorities="com.st.products"
+            android:name=".storage.ProductsProvider"/>
+
+
+        <activity android:name=".storage.ProductsClientActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
