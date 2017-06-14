@@ -17,7 +17,7 @@ public class PlayAudioActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playaudio);
-        mp = MediaPlayer.create(this, R.raw.wonderful_life);
+        //mp = MediaPlayer.create(this, R.raw.wonderful_life);
     }
 
     public void playAudio(View v) {

@@ -43,16 +43,20 @@ public class CameraDemoActivity extends Activity {
 	    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
 	    fileUri = getOutputMediaFileUri(); // create a file to save the image
-	    intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
-
-		Log.d("First", "File  : " + fileUri.toString());
-	    // start the image capture Intent
-	    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+		if ( fileUri != null ) {
+			intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
+			Log.d("First"," File : " + fileUri.toString());
+			// start the image capture Intent
+			startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+		}
+		else
+			Log.d("First","Unable to create output file!");
 	}
 	
 	
 	private  Uri getOutputMediaFileUri(){
-	    mediaStorageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
+	    mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM),"Camera");
+		//mediaStorageDir = getExternalFilesDir(null);
 
 	    // Create the storage directory if it does not exist
 	    if (! mediaStorageDir.exists()){
@@ -64,18 +68,24 @@ public class CameraDemoActivity extends Activity {
 
 	    // Create a media file name
 	    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-	    mediaFile = new File(mediaStorageDir.getPath() + File.separator +  "First_"+ timeStamp + ".jpg");
+	    mediaFile = new File(mediaStorageDir.getPath() + File.separator +  "IMG_"+ timeStamp + ".jpg");
 	    return Uri.fromFile(mediaFile);
 	}
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		Log.d("First","Returned from Camera App");
 	    if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
 	        if (resultCode == RESULT_OK) {
 				filename.setText( mediaFile.toString());
+				Log.d("First", "Photo file : "  +  mediaFile);
 				Bitmap bitmap = BitmapFactory.decodeFile(mediaFile.toString());
-				photo.setImageBitmap(bitmap);
+				if ( bitmap != null) {
+					photo.setImageBitmap(bitmap);
+					Log.d("First", "Stored photo in "  +  mediaFile);
+				}
+				else
+					Log.d("First", "Could not load photo from : "  +  mediaFile);
+
 	        }
 	        else
 	        {

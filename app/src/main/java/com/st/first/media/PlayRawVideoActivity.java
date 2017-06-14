@@ -22,7 +22,7 @@ public class PlayRawVideoActivity extends Activity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playvideo);
         videoView = (VideoView) findViewById(R.id.videoDemo);
-        Uri uri = Uri.parse("android.resource://com.st.first/raw/paris.mov");
+        Uri uri = Uri.parse("android.resource://com.st.first/raw/paris");  // Not paris.mov
         videoView.setVideoURI(uri);
         MediaController mediaController = new MediaController(this);
         videoView.setMediaController(mediaController);
