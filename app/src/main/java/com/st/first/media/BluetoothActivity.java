@@ -68,8 +68,8 @@ public class BluetoothActivity extends Activity {
                 devices.add(device.getName() + "-" + device.getAddress());
 
             }
-            spinnerDevices.setAdapter(devices);
         }
+        spinnerDevices.setAdapter(devices);
     }
 
     public void transferFile(View v) {
@@ -79,11 +79,13 @@ public class BluetoothActivity extends Activity {
         intent.setType("*/*");
         // create uri for file
         File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
-        Log.d("Bluetooth", "Music Directory : " + path.toString());
         File filename = new File(path, "srikanth.jpg");
+
+        Log.d("Media", filename.toString());
 
         Uri uri = Uri.fromFile(filename);
         intent.putExtra(Intent.EXTRA_STREAM, uri);
+
         String mac  = getSelectedDevice();
         Log.d("Bluetooth","Selected Deviced : " + mac);
         intent.putExtra(BluetoothDevice.EXTRA_DEVICE, mac);

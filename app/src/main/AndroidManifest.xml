@@ -34,7 +34,7 @@
             android:name=".storage.ProductsProvider"/>
 
 
-        <activity android:name=".media.SendSMSWithIntent">
+        <activity android:name=".media.SpellCheckActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
